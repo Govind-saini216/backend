@@ -4,7 +4,6 @@ import userouter from './routes/user.js';
 import reciperouter from './routes/recipe.js';
 import bodyparser from 'express';
 import cors from 'cors';
-import bcrypt from 'bcrypt';
 
 const app = expres();
 
@@ -13,9 +12,7 @@ app.use(cors({
      origin:true,
      credentials:true,
      methods:["POST","GET","PUT","DELETE"]
-}))
-
-app.use(bcrypt()); 
+})) 
 
 // api create router
 app.use('/api',userouter)
